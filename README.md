@@ -22,7 +22,7 @@ dsh plugin --profile web add "github:sunshine-lang/dsh-pdf"
 
 然后重启 `dsh --profile web`。`lib/` 已预构建并提交，安装无需构建权限。
 
-### 从 npm 安装（发布后可用）
+### 从 npm 安装
 
 ```sh
 dsh plugin --profile web add dsh-pdf

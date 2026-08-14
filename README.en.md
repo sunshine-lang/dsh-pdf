@@ -22,7 +22,7 @@ dsh plugin --profile web add "github:sunshine-lang/dsh-pdf"
 
 Then restart `dsh --profile web`. `lib/` is prebuilt and committed, so no build permission is needed.
 
-### From npm (once published)
+### From npm
 
 ```sh
 dsh plugin --profile web add dsh-pdf
