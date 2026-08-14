@@ -20,6 +20,14 @@
     "pdf"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunshine-lang/dsh-pdf.git"
+  },
+  "homepage": "https://github.com/sunshine-lang/dsh-pdf",
+  "bugs": {
+    "url": "https://github.com/sunshine-lang/dsh-pdf/issues"
+  },
   "engines": {
     "node": ">=22.19"
   },
