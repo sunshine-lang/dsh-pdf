@@ -1,6 +1,6 @@
 {
   "name": "dsh-pdf",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "PDF toolbox for DeepSeek Harness: extract text, metadata, and page ranges from PDF files (local parsing, no API key).",
   "type": "module",
   "main": "lib/index.js",
@@ -9,7 +9,8 @@
     "lib",
     "cordis.patch.yml",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "COMPATIBILITY.md"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json"
@@ -32,18 +33,43 @@
     "node": ">=22.19"
   },
   "dependencies": {
-    "@deepseek-ai/cordis": "^4.0.1",
-    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1",
-    "@deepseek-ai/schemastery": "^3.18.1",
     "pdfjs-dist": "^6.2.108"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
-    "typescript": "^5.5.0"
+    "typescript": "^5.5.0",
+    "@deepseek-ai/cordis": "4.0.2",
+    "@deepseek-ai/dsh-tools": "0.1.5-rc.2",
+    "@deepseek-ai/schemastery": "3.18.1"
   },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
+    },
+    "compatibility": {
+      "dsh": "0.1.5-rc.2 || 0.1.6-alpha.2",
+      "node": ">=22.19",
+      "dshReleases": {
+        "0.1.5-rc.2": "compatible",
+        "0.1.6-alpha.1": "unknown",
+        "0.1.6-alpha.2": "compatible"
+      }
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-tools": "^0.1.5-rc.2 || ^0.1.6-alpha.2",
+    "@deepseek-ai/schemastery": "^3.18.1"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    },
+    "@deepseek-ai/schemastery": {
+      "optional": true
     }
   }
 }

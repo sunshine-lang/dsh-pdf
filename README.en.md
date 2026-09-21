@@ -34,11 +34,7 @@ dsh plugin --profile web add dsh-pdf
 dsh plugin --profile web add ./dsh-pdf
 ```
 
-> Note: pnpm installs the dependencies of a `link:`-style local dependency only if you add them to the profile yourself. A registry/GitHub install handles them automatically:
->
-> ```sh
-> dsh plugin --profile web add @deepseek-ai/dsh-tools @deepseek-ai/cordis @deepseek-ai/schemastery pdfjs-dist
-> ```
+Official DSH runtime packages are supplied by the host as optional peers. Run `npm install --ignore-scripts` in this checkout for build dependencies before using a local link; local links do not install `pdfjs-dist` automatically.
 
 ## Use
 
@@ -89,3 +85,7 @@ All DeepSeek Harness plugins by this author, in one place: [dsh-plugins](https:/
 ## License
 
 MIT.
+
+## Compatibility
+
+Version 0.1.1 passed packed install, real CLI startup, PDF assertions and removal in disposable minimal Profiles on DSH `0.1.5-rc.2` and `0.1.6-alpha.2`. Alpha.1 remains `unknown`. Requires Node.js >=22.19; tested on macOS arm64 with Node.js 22.23.1. See [the evidence and reproduction commands](COMPATIBILITY.md) for exact scope and limitations.
