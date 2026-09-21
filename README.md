@@ -34,11 +34,13 @@ dsh plugin --profile web add dsh-pdf
 dsh plugin --profile web add ./dsh-pdf
 ```
 
-> 注意：pnpm 对 `link:` 方式的本地依赖不会自动安装其依赖，需要手动添加到 profile（通过 registry 或 GitHub 安装则会自动处理）：
->
-> ```sh
-> dsh plugin --profile web add @deepseek-ai/dsh-tools @deepseek-ai/cordis @deepseek-ai/schemastery pdfjs-dist
-> ```
+DSH 官方运行组件由宿主提供，插件不会另装一套旧版核心。开发时在本仓库运行 `npm install --ignore-scripts` 安装构建依赖；本地 `link:` 安装不会自动安装插件自身的 `pdfjs-dist`，请先在插件目录安装依赖。
+
+## 兼容性
+
+0.1.1 已在 DSH `0.1.5-rc.2` 和 `0.1.6-alpha.2` 的一次性最小 Profile 中通过打包安装、启动、PDF 读取与卸载验收。`0.1.6-alpha.1` 保留为 `unknown`。Node.js 要求 `>=22.19`；实际测试环境为 macOS arm64、Node.js 22.23.1。
+
+完整范围、复现命令与限制见 [兼容性验证记录](COMPATIBILITY.md)。这些结果不代表其他系统、Web UI 或模型调用已验收。
 
 ## 使用方法
 
